@@ -19,7 +19,6 @@ class Meals:
     return self.num_meals_left>0
 class Philosopher(threading.Thread):
   def __init__(self, id,left_fork,right_fork,meals):
-    # only change is to meals
     super().__init__()
     self.id = id
     self.left_fork=left_fork
@@ -31,7 +30,6 @@ class Philosopher(threading.Thread):
       self.dropForks()
  
   def run(self):
-    # only change is to end_state or meals
     while self.meals.hasNext():
         self.dining()
         self.thinking()
